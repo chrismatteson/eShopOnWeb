@@ -22,29 +22,21 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 name: "PK_CatalogBrand",
                 table: "CatalogBrand");
 
-            migrationBuilder.RenameTable(
-                name: "CatalogType",
-                newName: "CatalogTypes");
-
-            migrationBuilder.RenameTable(
-                name: "CatalogBrand",
-                newName: "CatalogBrands");
-
             migrationBuilder.AddPrimaryKey(
                 name: "PK_CatalogTypes",
-                table: "CatalogTypes",
+                table: "CatalogType",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_CatalogBrands",
-                table: "CatalogBrands",
+                table: "CatalogBrand",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Catalog_CatalogBrands_CatalogBrandId",
                 table: "Catalog",
                 column: "CatalogBrandId",
-                principalTable: "CatalogBrands",
+                principalTable: "CatalogBrand",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
@@ -52,7 +44,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
                 name: "FK_Catalog_CatalogTypes_CatalogTypeId",
                 table: "Catalog",
                 column: "CatalogTypeId",
-                principalTable: "CatalogTypes",
+                principalTable: "CatalogType",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -69,19 +61,11 @@ namespace Microsoft.eShopWeb.Infrastructure.Data.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_CatalogTypes",
-                table: "CatalogTypes");
+                table: "CatalogType");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_CatalogBrands",
-                table: "CatalogBrands");
-
-            migrationBuilder.RenameTable(
-                name: "CatalogTypes",
-                newName: "CatalogType");
-
-            migrationBuilder.RenameTable(
-                name: "CatalogBrands",
-                newName: "CatalogBrand");
+                table: "CatalogBrand");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_CatalogType",
