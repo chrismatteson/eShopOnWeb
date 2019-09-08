@@ -15,6 +15,7 @@ namespace Microsoft.eShopWeb.Web
         public async static Task Main(string[] args)
         {
             var host = CreateWebHostBuilder(args)
+                        .UseUrls(https://*.5001);
                         .Build();
 
             using (var scope = host.Services.CreateScope())
